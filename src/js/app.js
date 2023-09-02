@@ -64,11 +64,11 @@ class Game {
     this.gameContainer = document.querySelector(".game-container");
     this.scoreElement = document.querySelector(".score");
     this.score = 0;
-    this.maxMissedCount = 5; // Максимальное количество пропущенных гоблинов за цикл
-    this.goblinsToWin = 5; // Количество гоблинов для победы
-    this.missedGoblins = 0; // Счетчик пропущенных гоблинов за цикл
-    this.clickedGoblins = 0; // Счетчик кликов по гоблинам за цикл
-    this.isGameEnded = false; // Флаг для отслеживания окончания игры
+    this.maxMissedCount = 5; 
+    this.goblinsToWin = 5; 
+    this.missedGoblins = 0; 
+    this.clickedGoblins = 0; 
+    this.isGameEnded = false; 
 
     this.goblin = new Goblin(this.gameContainer, this.onGoblinClick.bind(this));
     this.hammer = new Hammer(this.gameContainer);
@@ -89,7 +89,7 @@ class Game {
         this.missedGoblins++;
 
         if (this.missedGoblins > this.maxMissedCount) {
-          this.endGame(`Игра завершена! Ваш счёт ${this.score}`); // Игрок проиграл
+          this.endGame(`Игра завершена! Ваш счёт ${this.score}`); 
         }
       }
     }, 1000);
@@ -115,7 +115,7 @@ class Game {
   endGame(message) {
     alert(message);
     this.isGameEnded = true;
-    location.reload(); // Перезагрузка страницы для начала новой игры
+    location.reload(); 
   }
 }
 
